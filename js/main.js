@@ -27,6 +27,8 @@ list.addEventListener('click', function (ev) {
     }
 }, false);
 
+
+//no he llegado a desarrollar esta funcion
 function listaFiltradaPrioridades(pPrioridad) {
 
     const listaDePrioridades = listaDeElementos.filter(prioridadBuscada => prioridadBuscada.prioridad === pPrioridad);
