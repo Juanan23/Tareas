@@ -1,4 +1,3 @@
-
 var myNodelist = document.getElementsByTagName("LI");
 var i;
 for (i = 0; i < myNodelist.length; i++) {
@@ -29,18 +28,25 @@ list.addEventListener('click', function (ev) {
 
 
 //no he llegado a desarrollar esta funcion
-function listaFiltradaPrioridades(pPrioridad) {
 
-    const listaDePrioridades = listaDeElementos.filter(prioridadBuscada => prioridadBuscada.prioridad === pPrioridad);
-    return listaDePrioridades;
+function filtrarPorPrioridad(pPrioridad, pListaTareas) {
+    const listaTareasPrioridad = pListaTareas.filter(tarea => tarea.prioridad.toLowerCase() === pPrioridad.toLowerCase());
+    return listaTareasPrioridad;
 }
 
 
-function newElement() {
+
+function newElement(pJson) {
     var li = document.createElement("li");
     var inputValue = document.getElementById("miInput").value;
     var t = document.createTextNode(inputValue, prioridad);
-    var prioridad = document.getElementsByClassName('prioridades');
+    var prioridad = document.getElementsByClassName('prioridad');
+
+    
+    
+   
+
+    
     li.appendChild(t);
     if (inputValue === '' || prioridad === '') {
         alert("Tienes que escribir algo!");
@@ -62,3 +68,27 @@ function newElement() {
         }
     }
 }
+
+let inputBuscador = document.getElementById('buscaTarea');
+inputBuscador.addEventListener('input', obtenerTareasInput);
+
+function obtenerTareasInput(event) {
+    if (event.target.value !== "") {
+        let filtroTarea = buscarPorPalabra(event.target.value, ulTareas);
+        newElement(filtroTarea);
+
+    } else {
+        newElement(tareas);
+    }
+}
+
+function buscarPorPalabra(pPalabra, pList) {
+    let palabra = pPalabra.toLowerCase().trim();
+    let listaPalabras = pList.filter(tarea => tarea.titulo.toLowerCase().includes(palabra));
+    return listaPalabras
+}
+
+
+
+
+

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/tareas.js"></script>
    
 </head>
 <body>
@@ -16,10 +17,10 @@
         
             <input type="text" id="miInput" placeholder="Tarea...">
         
-            <select class="prioridad" id="" required>
-                <option value="Urgente">Urgente</option>
-                <option value="Diaria">Diaria</option>
-                <option value="Mensual">Mensual</option>
+            <select class="prioridad" id="prioridad">
+                <option value="urgente">Urgente</option>
+                <option value="diaria">Diaria</option>
+                <option value="mensual">Mensual</option>
             </select>
         
         
@@ -40,7 +41,9 @@
                     <option value="3">Diaria</option>
                 </select>
             </form>
-            <input type="text" class="" id="filtrador" placeholder="Introduce una tarea a buscar">
+            
+            <input type="text" placeholder="Introduce una tarea a" id="buscaTarea">
+            <i class="fas fa-search"></i>
     
     
         </div>
