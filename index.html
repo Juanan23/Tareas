@@ -10,21 +10,43 @@
 </head>
 <body>
 
-    <div id="buscador" class="header">
-    
-        <input type="text" id="miInput" placeholder="Title...">
+    <header>
 
-        <select class="" id="">
-            <option value="">Urgente</option>
-            <option value="">Diaria</option>
-            <option value="">Mensual</option>
-        </select>
-
+        <div id="buscador" class="header">
         
-        <span>
-           
-        <span onclick="newElement()" class="meterBoton">Añadir</span>
-    </div>
+            <input type="text" id="miInput" placeholder="Tarea...">
+        
+            <select class="prioridad" id="" required>
+                <option value="Urgente">Urgente</option>
+                <option value="Diaria">Diaria</option>
+                <option value="Mensual">Mensual</option>
+            </select>
+        
+        
+            <span><span onclick="newElement()" class="meterBoton">Añadir</span>
+        </div>
+
+
+    </header>
+
+    <nav>
+        <div class="container">
+    
+            <form action="">
+                <select id='prioridadFiltrado'>
+                    <option class="form-control" value="" selected>Buscar por prioridad</option>
+                    <option value="1">Urgente</option>
+                    <option value="2">Mensual</option>
+                    <option value="3">Diaria</option>
+                </select>
+            </form>
+            <input type="text" class="" id="filtrador" placeholder="Introduce una tarea a buscar">
+    
+    
+        </div>
+    </nav>
+
+   
     
     <ul id="ulTareas">
         <!-- <li>Ir al gimnasio</li>
@@ -34,6 +56,12 @@
         <li>Ver la tele</li>
         <li>Recojer la habitacion</li> -->
     </ul>
+
+    <footer class="footer">
+        <div>
+            <p>TAREAS DE JUAN</p>
+        </div>
+    </footer>
 
     
     <script src="js/main.js"></script>
